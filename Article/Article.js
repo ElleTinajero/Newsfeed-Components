@@ -154,12 +154,14 @@ secondPar.classList.add('secondp');
 thirdPar.classList.add('lorem');
 compSpan.classList.add('expandButton');
 
+comp.appendChild(componentCreator);
 comp.appendChild(compTitle);
 comp.appendChild(compDate);
 comp.appendChild(firstPar);
 comp.appendChild(secondPar);
 comp.appendChild(thirdPar);
 comp.appendChild(compSpan);
+
 
 compTitle.textContent = title;
 compDate.textContent = date;
@@ -168,7 +170,7 @@ secondPar.textContent = secondParagraph;
 thirdPar.textContent  = thirdParagraph;
 
 compSpan.addEventListener('click', (e) => {
-  comp.classList.toggle('article-open')
+  comp.classList.toggle('article-open');
 });
 return comp;
 
