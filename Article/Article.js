@@ -112,3 +112,50 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const articles = document.querySelector('.articles');
+console.log(articles);
+
+data.forEach((whatever) => {
+  articles.appendChild(componentCreator(whatever.title, whatever.date, whatever.firstParagraph, whatever.secondParagraph, whatever.thirdParagraph));  //is this what makes it render?
+});
+
+function componentCreator(title, date, firstParagraph, secondParagraph, thirdParagraph) { 
+
+const comp = document.createElement('div');
+const compTitle = document.createElement('h2');
+const compDate = document.createElement('p');
+const firstPar = document.createElement('p');
+const secondPar = document.createElement('p');
+const thirdPar = document.createElement('p');
+const compSpan = document.createElement('span');
+
+comp.classList.add('article', 'article-open');
+compDate.classList.add('date');
+firstPar.classList.add('firstp');
+secondPar.classList.add('secondp');
+thirdPar.classList.add('lorem');
+compSpan.classList.add('expandButton');
+
+comp.appendChild(compTitle);
+comp.appendChild(compDate);
+comp.appendChild(firstPar);
+comp.appendChild(secondPar);
+comp.appendChild(thirdPar);
+comp.appendChild(compSpan);
+
+compTitle.textContent = title;
+compDate.textContent = date;
+firstPar.textContent = firstParagraph;
+secondPar.textContent = secondParagraph;
+thirdPar.textContent  = thirdParagraph;
+
+compSpan.addEventListener('click', (e) => {
+  comp.classList.toggle('article-open');
+});
+return comp;
+
+};
+
+
+// edjfjaslkjflaskjflkasjcklj
